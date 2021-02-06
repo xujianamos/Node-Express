@@ -34,12 +34,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // 定义404错误处理
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // 定义其他错误处理
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // 设置locals，只在开发环境生效
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
