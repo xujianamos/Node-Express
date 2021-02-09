@@ -17,7 +17,9 @@ var app = express();
 // 定义页面目录
 app.set('views', path.join(__dirname, 'views'));
 // 定义页面模版引擎
-app.set('view engine', 'jade');
+// app.set('view engine', 'jade');
+app.engine('.html',require('express-art-template'))
+app.set('view engine','html')
 // 定义日志打印级别
 app.use(logger('dev'));
 // 定义json格式处理数据
